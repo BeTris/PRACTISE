@@ -1,0 +1,20 @@
+#binomial coefficient 
+#def 1 : A binomial coefficient C(n, k) can be defined as the coefficient of x^k in the expansion of (1 + x)^n.
+#def 2 : A binomial coefficient C(n, k) also gives the number of ways, disregarding order, that k objects can be
+#chosen from among n objects more formally, the number of k-element subsets (or k-combinations) of a n-element set. or nCr
+
+#NAIVE RECURSIVE APPROACH
+def bin(n,r):
+    if(r>n):
+        return 0
+    elif(r==n or r==0):
+        return 1
+    else:
+        return(bin(n-1,r-1)+bin(n-1,r))
+ 
+x = bin(5,2)      
+print(x)
+
+
+#DP
+#PASCAL'S TRIANGLE
