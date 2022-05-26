@@ -1,0 +1,13 @@
+#countConstruct
+#count no. of ways element can be created by using elements of the word bank
+
+target = "purple"
+wordBank = ["purp","p","ur","le","purpl"]
+arr = [0] * (len(target)+1)
+arr[0] = 1 #only one way to make target string of length 0
+for i in range(0,len(target)+1):
+    if(arr[i]!=0):
+        for w in wordBank:
+            if(target[i:i+len(w)] == w):
+                arr[i+len(w)] += arr[i]
+print(arr[len(target)])
