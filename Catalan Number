@@ -1,0 +1,13 @@
+#Catalan number 
+#dp
+
+def cat(n):
+    if(n<=1):
+        return 1
+    else:
+        res = 0
+        for i in range(0,n):
+            res += cat(i) * cat(n-i-1)
+        return res
+            
+print(cat(5))
