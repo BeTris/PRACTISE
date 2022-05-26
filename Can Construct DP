@@ -1,0 +1,13 @@
+# reuse of element allowed Check if using elements from wordbank the target string xan be achieved or not
+
+target = "abcdef"
+wordBank = ["ab","abc","cd","def","abcd"]
+arr = [False]*(len(target)+1)
+arr[0] = True
+for i in range(0,len(target)+1):
+    if(arr[i] == True):
+        for w in wordBank:
+            #if word matches character in position i
+            if(target[i:i+len(w)] == w):
+                arr[i+len(w)] = True
+print(arr)
